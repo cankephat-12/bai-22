@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAI22</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>
+      Bài 22: CSS cơ bản- Inline, internal, and external CSS tutorial for web
+      development
+    </h1>
+    <hr />
+    <h1>1. Tổng quan CSS</h1>
+    <h2>* CSS (cascading Style Sheets):</h2>
+    <p>
+      <em>
+        <b>
+          - Là một ngôn ngữ được sử dụng để tìm và định dạng lại các phần tử
+          được tạo ra bởi ngôn ngữ đánh dấu (HTML) <br />
+          - Nếu HTML đóng vai trò định dạng các phần tử trên website như việc
+          tạo ra các đoạn văn bản, các tiêu đề... <br />
+          Thì CSS sẽ giúp ta có thể thêm style vào các phần tử HTML đó như đổi
+          bố cục, màu sắc trang, đổi màu chữ, font chữ...
+        </b>
+      </em>
+    </p>
+    <h1>2. Vị trí đặt CSS</h1>
+    <h3>
+      <code class="language-html"
+        >&lt;tag style=&quot;css&quot;&gt;&lt;/tag&gt;</code
+      >
+      =
+      <em>Inline (CSS nội tuyến)</em> <br />
+      <code class="language-html">&lt;style&gt;CSS&lt;/style&gt;</code> =
+      <em>Internal (CSS nội bộ)</em> <br />
+      <code class="language-html">&lt;link href=&quot;style.css&quot;/&gt;</code
+      >=<em> ExternalCSS bên ngoài</em>
+    </h3>
+    <h3>
+      A.
+      <em>
+        Inline (CSS nội tuyến) là cách viết nã ngay trong phần tử cơ bản
+        HTML</em
+      >
+    </h3>
+    <h4 style="color: red">Nhược điểm:</h4>
+    <ul style="color: rgb(255, 0, 0)">
+      <li>
+        1. Khó thay đổi, mỗi lần thay đổi phải thay đổi một cách riêng lẻ.
+      </li>
+      <li>2. Không tái sử dụng được.</li>
+      <li>3. Khó quản lý.</li>
+      <li>4. Khó tách biệt cấu trúc.</li>
+    </ul>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;vi&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot; /&gt;
+        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+        &lt;title&gt;cankephat&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;h1 style=&quot;color: red&quot;&gt;Hello, World!&lt;/h1&gt;
+    &lt;!-- 1. style = thuộc tính (name of Attribute) 
+         2. &quot;color: red&quot; = giá trị (Value foe Attribute)
+            2.1: color = property
+            2.2: red = value--&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+    <h2 style="color: black">Ví dụ:</h2>
+    <h1 style="color: red">Hôm nay Phát học CSS</h1>
+    <h3>
+      <code class="language-html">
+        &lt;h1 style=&quot;color: red&quot;&gt;Hôm nay Phát học CSS&lt;/h1&gt;
+      </code>
+    </h3>
+    <hr />
+    <h1>
+      B.
+      <em
+        >Internal (CSS nội bộ) là cách viết mã CSS trong cặp thẻ style (đặt
+        trong khối head)</em
+      >
+    </h1>
+    <h3>
+      <pre><code class="language-html">
+    &lt;style&gt; 
+    h1{ 
+        color: blue; 
+        font-style: italic; 
+    }
+    &lt;/style&gt;
+    </code>
+</pre>
+    </h3>
+    <h2 style="color: blue">Ưu điểm:</h2>
+    <ul style="color: blue; font-size: large">
+      <li>
+        <b>Code tách biệt với phần tử, có thể áp dụng với toàn bộ trang.</b>
+      </li>
+    </ul>
+    <h2 style="color: red">Nhược điểm:</h2>
+    <ul style="color: red; font-size: large">
+      <li>
+        <b>
+          Vẫn khó quản lý khi dự án lớn, quá nhiều mã CSS sẽ làm tệp HTML trở
+          nên cồng kềnh.
+        </b>
+      </li>
+    </ul>
+    <img src="img/1.png" alt="ảnh 1" />
+    <hr />
+    <h1>
+      C.
+      <em
+        >External (CSS bên ngoài): trong trường hợp muốn áp dụng cho toàn bộ các
+        file <br />
+        HTML nằm trên trang web, tránh việc phải copy css ra tất cả các file</em
+      >
+    </h1>
+    <h3>* Là cách viết mã CSS thành 1 tệp .css quản lý riêng.</h3>
+    <img src="img/2.png" alt="ảnh 2" />
+    <h3>* Cần khai báo trong HTML để linh đến tệp CSS</h3>
+    <h3>
+      <code class="language-html"
+        >&lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;
+        /&gt;</code
+      >
+    </h3>
+    <img src="img/3.png" alt="ảnh 3" />
+    <h3>
+      * rel="stylesheet" thông báo cho trình duyệt, tải tệp CSS được chỉ định và
+      áp dụng các định dạng kiểu trong trong tệp đó cho trang web hiện tại
+    </h3>
+    <br />
+    <br />
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  </body>
+</html>
